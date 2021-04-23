@@ -27,7 +27,7 @@ namespace wpfPrintSamples
             InitializeComponent();
         }
         string imgPath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "sample_city.jpg");
-        string testSavePath1 = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "sample_city_test1.jpg");
+        string testSavePath1 = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "1140537.jpg");
         string testSavePath2 = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "sample_city_test2.jpg");
         string printerDescription = "samplePic";
 
@@ -50,7 +50,7 @@ namespace wpfPrintSamples
             bi.BeginInit();
             bi.CacheOption = BitmapCacheOption.OnLoad;
 
-            bi.UriSource = new Uri(imgPath);
+            bi.UriSource = new Uri(testSavePath1);
             bi.EndInit();
 
             return bi;
@@ -102,7 +102,7 @@ namespace wpfPrintSamples
             System.Printing.PrintCapabilities capabilities = pd.PrintQueue.GetPrintCapabilities(pd.PrintQueue.DefaultPrintTicket);
 
             //get scale of the print wrt to screen of WPF visual 일반적으로 res사진이 더 크기때문에 MAX임
-            double scale = Math.Max(capabilities.PageImageableArea.ExtentWidth / bs.Width, capabilities.PageImageableArea.ExtentHeight / bs.Height);
+            double scale = Math.Min(capabilities.PageImageableArea.ExtentWidth / bs.Width, capabilities.PageImageableArea.ExtentHeight / bs.Height);
 
             BitmapSource bi_t = new TransformedBitmap(bs, new ScaleTransform(scale, scale));
             //x SaveBitmapSource(testSavePath2, bi_t);            
