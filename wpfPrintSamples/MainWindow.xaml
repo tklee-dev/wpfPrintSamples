@@ -22,7 +22,8 @@
             <Button x:Name="button1" Content="Present Image" HorizontalAlignment="Left"   Click="button1_Click"/>
             <Button x:Name="button" Content="Just Print with Dialog" HorizontalAlignment="Left"   Click="button2_Click"/>
             <Button x:Name="button3" Content="AutoScaling ( with Framework Element)" HorizontalAlignment="Left"   Click="button3_Click"/>
-            <Button x:Name="button4" Content="AutoScaling, AutoRotation witout dialog (local image file)" HorizontalAlignment="Left"   Click="button4_Click"/>
+            <Button x:Name="button4" Content="NG. AutoScaling, AutoRotation witout dialog (local image file)" HorizontalAlignment="Left"   Click="button4_Click"/>
+            <Button x:Name="button5" Content="AutoScaling, AutoRotation (local image file)" Click="button5_Click"/>
         </StackPanel>
         <Image Name="image"  Grid.Row="1" Margin="5"></Image>
 
